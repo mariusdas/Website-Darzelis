@@ -1,0 +1,113 @@
+﻿<div id="loader" style="display: none">
+    <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> Saugomma
+</div>
+<form class="form-horizontal" name="newUserForm" novalidate role="form" ng-submit="save()">
+    <div class="panel panel-primary" style="width:700px;">
+        <div class="panel-heading"><b>Sukurti naują vartotoją</b></div>
+        <div class="panel-body">
+            <fieldset>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Vardas.$invalid}">
+                    <label for="Vardas" class="col-sm-3 control-label">Vartotojo vardas</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Vardas" name="Vardas" class="form-control" ng-model="newUser.Vardas" required ng-minlength="5" />
+                        <span class="help-block" ng-show="newUserForm.Vardas.$error.required"><i class="fa fa-star"></i></span>
+
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Pavarde.$invalid}">
+                    <label for="Pavarde" class="col-sm-3 control-label">Pavarde</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Pavarde" name="Pavarde" class="form-control" ng-model="newUser.Pavarde" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.Pavarde.$error.required"><i class="fa fa-star"></i></span>
+                      
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Metai.$invalid}">
+                    <label for="Metai" class="col-sm-3 control-label">Metai</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Metai" name="Metai" class="form-control" ng-model="newUser.Metai" required ng-pattern="/^(19\d{2})|(200\d)|(201[0-5])$/" />
+                        <span class="input-validation-error" ng-show="newUserForm.Metai.$error.required"><i class="fa fa-star"></i></span>
+                        <span class="input-validation-error" ng-show="newUserForm.Metai.$error.pattern">Įveskite metus tarp 1900-2017</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Email.$invalid}">
+                    <label for="Email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Email" name="Email" class="form-control" ng-model="newUser.Email" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.Email.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Username.$invalid}">
+                    <label for="Username" class="col-sm-3 control-label">Username</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Username" name="Username" class="form-control" ng-model="newUser.Username" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.Username.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Password.$invalid}">
+                    <label for="Password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="Password" name="Password" class="form-control" ng-model="newUser.Password" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.Password.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.ConfirmPassword.$invalid}">
+                    <label for="ConfirmPassword" class="col-sm-3 control-label">ConfirmPassword</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" ng-model="newUser.ConfirmPassword" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.ConfirmPassword.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.VaikoINDnr.$invalid}">
+                    <label for="VaikoINDnr" class="col-sm-3 control-label">VaikoIindentifikavimo numeris</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="VaikoINDnr" name="VaikoINDnr" class="form-control" ng-model="newUser.VaikoINDnr" required ng-minlength="5" />
+                        <span class="input-validation-error" ng-show="newUserForm.VaikoINDnr.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.City.$invalid}">
+                    <label for="City" class="col-sm-3 control-label">Miestas</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="City" name="City" class="form-control" ng-model="newUser.City" required />
+                        <span class="input-validation-error" ng-show="newUserForm.City.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.Region.$invalid}">
+                    <label for="Region" class="col-sm-3 control-label">Regionas</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Region" name="Region" class="form-control" ng-model="newUser.Region"  required/>
+                        <span class="input-validation-error" ng-show="newUserForm.Region.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.UserType.$invalid}">
+                    <label for="UserType" class="col-sm-3 control-label">Varotojo tipas</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="UserType" name="UserType" class="form-control" ng-model="newUser.UserType" required />
+                        <span class="input-validation-error" ng-show="newUserForm.UserType.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : newUserForm.RequestCreated.$invalid}">
+                    <label for="RequestCreated" class="col-sm-3 control-label">Sukurtas requestas?</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="RequestCreated" name="RequestCreated" class="form-control" ng-model="newUser.RequestCreated" required/>
+                        <span class="input-validation-error" ng-show="newUserForm.RequestCreated.$error.required"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="container" style="width:700px;">
+                    <button type="submit" id="addNewUser" value="addNewUser" ng-disabled="newUserForm.$invalid">
+                        <i class="fa fa-plus btn btn-primary"> Pridėti vartotoją</i>
+                    </button>
+                    <button type="button" id="cancelUser" value="cancelUser" ng-click="cancelUser()">
+                        <i class="fa fa-undo btn btn-link"> Atšaukti</i>
+                    </button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</form>
+
+<style>
+    .col-sm-3 control-label{
+        text-align:left;
+    }
+    </style>

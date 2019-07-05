@@ -1,0 +1,360 @@
+﻿@model Darzelis.Web.Models.RequestModel
+
+<h2 style="text-align:left;">Sukurti prašymą</h2>
+
+@using (Html.BeginForm())
+{
+
+    
+    
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger">
+                <a href="#" class="close" style="padding-right: 25px;" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Klaida!</strong> @(Model.ErrorMessage)
+            </div>
+           
+
+        }
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.PrasymoPateikimoData, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Prasymo pateikimo data:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PrasymoPateikimoData, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PrasymoPateikimoData, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.VaikoId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Vartotojas:</label>
+
+            <div class="col-md-10">
+                @Html.DropDownList("VaikoId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VaikoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.VaikoGimimoData, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Vaiko gimimo data:</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VaikoGimimoData, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VaikoGimimoData, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.LankymoData, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Lankymo data:</label>
+
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.LankymoData, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LankymoData, "", new { @class = "text-danger" })*@
+
+                @Html.DropDownList("LankymoData", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VaikoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.VaikoSeniunija, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Vaiko seniūnija:</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VaikoSeniunija, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VaikoSeniunija, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Prioritetas_DeklaruotasMiestas, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Prioritetas deklaruotas miestas:</label>
+
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Prioritetas_DeklaruotasMiestas)
+                    @Html.ValidationMessageFor(model => model.Prioritetas_DeklaruotasMiestas, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Prioritetas_3_ar_Daugiau_Vaiku, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Prioritetas 3 ar daugiau vaikų:</label>
+
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Prioritetas_3_ar_Daugiau_Vaiku)
+                    @Html.ValidationMessageFor(model => model.Prioritetas_3_ar_Daugiau_Vaiku, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Prioritetas_seimosdarbingumoLygis, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Prioritetas šeimos darbingumo lygis:</label>
+
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Prioritetas_seimosdarbingumoLygis)
+                    @Html.ValidationMessageFor(model => model.Prioritetas_seimosdarbingumoLygis, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Prioritetas_auginaTikVienasTevas, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Prioritetas augina tik vienas tėvas:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Prioritetas_auginaTikVienasTevas)
+                    @Html.ValidationMessageFor(model => model.Prioritetas_auginaTikVienasTevas, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.PasirinktasDarzelis_1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">1. Pasirinkti Darželį:</label> 
+            <div class="col-md-10">
+                @Html.DropDownList("PasirinktasDarzelis_1", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PasirinktasDarzelis_1, "", new { @class = "text-danger" })
+            </div>
+        </div>        
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">1. Atitinka darželio priskirtą teritoriją:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_1)
+                    @Html.ValidationMessageFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DarzeliLankoBrolysSeserys_1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">1. Darzelį lanko brolys arba seserys:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DarzeliLankoBrolysSeserys_1)
+                    @Html.ValidationMessageFor(model => model.DarzeliLankoBrolysSeserys_1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.TinkamaGrupeDarzelyje_1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">1. Tinkama grupė darželyje:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TinkamaGrupeDarzelyje_1)
+                    @Html.ValidationMessageFor(model => model.TinkamaGrupeDarzelyje_1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">2. Pasirinkti Darželį:</label> 
+            <div class="col-md-10">
+                @Html.DropDownList("PasirinktasDarzelis_2",null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PasirinktasDarzelis_2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            <label class = "control-label col-md-2" >2. Atitinka darželio priskirtą teritoriją:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_2)
+                    @Html.ValidationMessageFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <label class="control-label col-md-2">2. Darzelį lanko brolys arba seserys:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DarzeliLankoBrolysSeserys_2)
+                    @Html.ValidationMessageFor(model => model.DarzeliLankoBrolysSeserys_2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <label class="control-label col-md-2">2. Tinkama grupė darželyje:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TinkamaGrupeDarzelyje_2)
+                    @Html.ValidationMessageFor(model => model.TinkamaGrupeDarzelyje_2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+           <label class="control-label col-md-2">3. Pasirinkti Darželį:</label> 
+
+            <div class="col-md-10">
+                @Html.DropDownList("PasirinktasDarzelis_3", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PasirinktasDarzelis_3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           <label class="control-label col-md-2">3. Atitinka darželio priskirtą teritoriją:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_3)
+                    @Html.ValidationMessageFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DarzeliLankoBrolysSeserys_3, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">3. Darzelį lanko brolys arba seserys:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DarzeliLankoBrolysSeserys_3)
+                    @Html.ValidationMessageFor(model => model.DarzeliLankoBrolysSeserys_3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.TinkamaGrupeDarzelyje_3, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">3. Tinkama grupė darželyje:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TinkamaGrupeDarzelyje_3)
+                    @Html.ValidationMessageFor(model => model.TinkamaGrupeDarzelyje_3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+           @* @Html.LabelFor(model => model.PasirinktasDarzelis_4, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">4. Pasirinkti Darželį:</label> 
+            <div class="col-md-10">
+               @Html.DropDownList("PasirinktasDarzelis_4", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PasirinktasDarzelis_4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_4, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">4. Atitinka darželio priskirtą teritoriją:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_4)
+                    @Html.ValidationMessageFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DarzeliLankoBrolysSeserys_4, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">4. Darzelį lanko brolys arba seserys:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DarzeliLankoBrolysSeserys_4)
+                    @Html.ValidationMessageFor(model => model.DarzeliLankoBrolysSeserys_4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.TinkamaGrupeDarzelyje_4, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">4. Tinkama grupė darželyje:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TinkamaGrupeDarzelyje_4)
+                    @Html.ValidationMessageFor(model => model.TinkamaGrupeDarzelyje_4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.PasirinktasDarzelis_5, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">5. Pasirinkti Darželį:</label> 
+            <div class="col-md-10">
+               @Html.DropDownList("PasirinktasDarzelis_5", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PasirinktasDarzelis_5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_5, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">5. Atitinka darželio priskirtą teritoriją:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_5)
+                    @Html.ValidationMessageFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DarzeliLankoBrolysSeserys_5, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">5. Darzelį lanko brolys arba seserys:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.DarzeliLankoBrolysSeserys_5)
+                    @Html.ValidationMessageFor(model => model.DarzeliLankoBrolysSeserys_5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.TinkamaGrupeDarzelyje_5, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">5. Tinkama grupė darželyje:</label> 
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TinkamaGrupeDarzelyje_5)
+                    @Html.ValidationMessageFor(model => model.TinkamaGrupeDarzelyje_5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Patvirtinti" onclick="disableInput()" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+   .form-horizontal .control-label{
+       text-align:left;
+       width:200px;
+   }
+   .col-md-10 {
+    width: 500px;
+}
+    </style>
+
+<script>
+    window.onload = function ready() {
+        
+        $("#PrasymoPateikimoData").attr('disabled', 'disabled');
+        $("#VaikoGimimoData").attr('disabled', 'disabled');
+    }
+    function disableInput() {
+        $("#PrasymoPateikimoData").removeAttr('disabled');
+        $("#VaikoGimimoData").removeAttr('disabled');
+    }
+    
+    </script>

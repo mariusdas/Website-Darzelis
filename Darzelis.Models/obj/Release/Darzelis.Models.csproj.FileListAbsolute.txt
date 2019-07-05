@@ -1,0 +1,13 @@
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\Darzelis.Models.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\Darzelis.Models.pdb
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\Microsoft.CSharp.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.ComponentModel.DataAnnotations.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.Data.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.Net.Http.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.Xml.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\bin\Release\System.Xml.Linq.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\obj\Release\Darzelis.Models.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\obj\Release\Darzelis.Models.pdb
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Models\obj\Release\Darzelis.Models.csprojResolveAssemblyReference.cache

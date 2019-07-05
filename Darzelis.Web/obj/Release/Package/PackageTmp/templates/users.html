@@ -1,0 +1,62 @@
+﻿<div class="container">
+    <button type="button" id="addUser" value="addUser" ng-click="addUser()">
+        <i class="fa fa-plus btn btn-link"> Pridėti vartotoją</i>
+    </button>
+    
+</div>
+
+<br/>
+
+<div id="loader" style="display: none">
+    <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> Kraunami vartotojai
+</div>
+<br/>
+<form class="form-horizontal" name="usersForm" role="form">
+    <fieldset>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><b>Vartotojų sistema</b></div>
+            <div class="panel-body">
+                <table class="table table-hover table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Vardas</th>
+                            <th>Pavardė</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Edit</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="i in filteredUsers">
+                            <td>
+                                {{i.Vardas}}
+                            </td>
+                            <td>
+                                {{i.Pavarde}}
+                            </td>
+                            <td>
+                                {{i.Username}}
+                            </td>
+                            <td>
+                                {{i.Email}}
+                            </td>
+                            <td>
+                                <a data-ng-href="#/editUser/{{i.Id}}" class="btn btn-info">Koreguoti</a>
+                            </td>                            
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div data-pagination="" data-num-pages="numPages()"
+                     data-current-page="currentPage" data-max-size="maxSize"
+                     data-boundary-links="true" 
+                     first-text="Pirmas"
+                     last-text="Paskutinis"
+                     next-text="Kitas"
+                     previous-text="Atgal" style="cursor: pointer;"></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+    

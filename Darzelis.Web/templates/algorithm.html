@@ -1,0 +1,307 @@
+﻿<div class="container">
+    Lankymo data: <input type="text" name="pasirinktasDarzelisFitler" ng-model="newAlgorithm.LankymoData" id="pasirinktasDarzelisFitler">
+    <button type="button" id="updateAlgorithm" value="updateAlgorithm" ng-click="updateAlgorithm()">
+        <i class="fa fa-filter btn btn-link"> </i>
+    </button>
+</div>
+<br />
+<div id="loader" style="display: none">
+    <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> Kraunami siulymai
+</div>
+<br />
+<form class="form-horizontal" name="algorithmForm" role="form">
+    <fieldset>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><b>Algoritmas</b></div>
+            <div class="panel-body">
+                <table class="table table-hover table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Vartotojas</th>
+                            <!--<th>Prioritetas Deklaruotas Miestas</th>
+                            <th>Prioritetas 3 ar Daugiau Vaiku</th>
+                            <th>Prioritetas seimos darbingumo Lygis</th>
+                            <th>Prioritetas augina Tik Vienas Tevas</th>-->
+                            <th>Pasirinktas darželis 1</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darželis 2</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darželis 3</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darželis 4</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darželis 5</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        <tr data-ng-repeat="i in AllFiltredRequests">
+                            <td>
+                                {{i.VaikoIDNF.Vardas}} {{i.VaikoIDNF.Pavarde}}
+ 
+                            </td>
+                            <!--<td>
+                                {{i.Prioritetas_DeklaruotasMiestas}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_3_ar_Daugiau_Vaiku}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_seimosdarbingumoLygis}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_auginaTikVienasTevas }}
+                            </td>-->
+                            <td>
+                                {{i.PreSchool1.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool1.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool1.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool2.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool2.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool2.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool3.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool3.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool3.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool4.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool4.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool4.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool5.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool5.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool5.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+  
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-pagination="" data-num-pages="numPages()"
+                     data-current-page="currentPage" data-max-size="maxSize"
+                     data-boundary-links="true" 
+                     first-text="Pirmas"
+                     last-text="Paskutinis"
+                     next-text="Kitas"
+                     previous-text="Atgal"
+                      ></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form class="form-horizontal" name="algorithmForm" role="form">
+    <fieldset>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><b>Priimti</b></div>
+            <div class="panel-body">
+                <table class="table table-hover table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Vartotojas</th>
+                            <!--<th>Prioritetas Deklaruotas Miestas</th>
+                            <th>Prioritetas 3 ar Daugiau Vaiku</th>
+                            <th>Prioritetas seimos darbingumo Lygis</th>
+                            <th>Prioritetas augina Tik Vienas Tevas</th>-->
+                            <th>Pasirinktas darzelis 1</th>
+                            <th>Pasirinktas darzelis 2</th>
+                            <th>Pasirinktas darzelis 3</th>
+                            <th>Pasirinktas darzelis 4</th>
+                            <th>Pasirinktas darzelis 5</th>
+                            <th>Priimtas Darzelio</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr data-ng-repeat="i in AllAccepted">
+                            <td>
+                                {{i.VaikoIDNF.Vardas}} {{i.VaikoIDNF.Pavarde}}
+                            </td>
+                            <!--<td>
+                                {{i.Prioritetas_DeklaruotasMiestas}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_3_ar_Daugiau_Vaiku}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_seimosdarbingumoLygis}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_auginaTikVienasTevas }}
+                            </td>-->
+                            <td>
+                                {{i.PreSchool1.Label}}
+                            </td>
+                            <td>
+                                {{i.PreSchool2.Label}}
+                            </td>
+                            <td>
+                                {{i.PreSchool3.Label}}
+                            </td>
+                                                       
+                            <td>
+                                {{i.PreSchool4.Label}}
+                            </td>
+                            <td>
+                                {{i.PreSchool5.Label}}
+                            </td>
+                            <td>{{i.PreSchoolAccepted.Label}} || {{i.PriimtasDarzelis}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div data-pagination="" data-num-pages="numPages()"
+                     data-current-page="currentPage" data-max-size="maxSize"
+                     data-boundary-links="true"
+                     first-text="Pirmas"
+                     last-text="Paskutinis"
+                     next-text="Kitas"
+                     previous-text="Atgal"></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form class="form-horizontal" name="algorithmForm" role="form">
+    <fieldset>
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><b>Nepriimti</b></div>
+            <div class="panel-body">
+                <table class="table table-hover table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Vartotojas</th>
+                            <!--<th>Prioritetas Deklaruotas Miestas</th>
+                            <th>Prioritetas 3 ar Daugiau Vaiku</th>
+                            <th>Prioritetas seimos darbingumo Lygis</th>
+                            <th>Prioritetas augina Tik Vienas Tevas</th>-->
+                            <th>Pasirinktas darzelis 1</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darzelis 2</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darzelis 3</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darzelis 4</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                            <th>Pasirinktas darzelis 5</th>
+                            <th>Vieta</th>
+                            <th>Prioritetų sumą</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr data-ng-repeat="i in AllNotAccepted">                        
+                            <td>
+                                {{i.VaikoIDNF.Vardas}} {{i.VaikoIDNF.Pavarde}}
+                            </td>
+                            <!--<td>
+                                {{i.Prioritetas_DeklaruotasMiestas}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_3_ar_Daugiau_Vaiku}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_seimosdarbingumoLygis}}
+                            </td>
+                            <td>
+                                {{i.Prioritetas_auginaTikVienasTevas }}
+                            </td>-->
+                            <td>
+                                {{i.PreSchool1.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool1.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool1.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool2.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool2.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool2.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool3.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool3.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool3.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool4.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool4.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool4.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                            <td>
+                                {{i.PreSchool5.Label}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool5.DarzelioVietaEileje}}
+                            </td>
+                            <td>
+                                {{i.PreRequestSchool5.DarzelisPrioritetuSuma + i.PrioritetuSuma}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-pagination="" data-num-pages="numPages()"
+                     data-current-page="currentPage" data-max-size="maxSize"
+                     data-boundary-links="true"
+                     first-text="Pirmas"
+                     last-text="Paskutinis"
+                     next-text="Kitas"
+                     previous-text="Atgal" style="cursor: pointer;"></div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+

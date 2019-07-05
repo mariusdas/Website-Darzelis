@@ -1,0 +1,411 @@
+﻿@model IEnumerable<Darzelis.Web.Models.RequestModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+
+<p>
+    @Html.ActionLink("Kurti", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrasymoPateikimoData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VaikoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VaikoGimimoData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LankymoData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VaikoSeniunija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prioritetas_DeklaruotasMiestas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prioritetas_3_ar_Daugiau_Vaiku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prioritetas_seimosdarbingumoLygis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prioritetas_auginaTikVienasTevas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasirinktasDarzelis_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UzpildytasDarzelis_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioVietaEileje_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Darzelio_seniūnija_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymojiKalba_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymoMetodika_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesTipas_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioAmziausIntervalas_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzeliLankoBrolysSeserys_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinkamaGrupeDarzelyje_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasirinktasDarzelis_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UzpildytasDarzelis_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioVietaEileje_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Darzelio_seniūnija_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymojiKalba_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymoMetodika_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesTipas_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioAmziausIntervalas_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzeliLankoBrolysSeserys_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinkamaGrupeDarzelyje_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasirinktasDarzelis_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UzpildytasDarzelis_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioVietaEileje_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Darzelio_seniūnija_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymojiKalba_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymoMetodika_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesTipas_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioAmziausIntervalas_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzeliLankoBrolysSeserys_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinkamaGrupeDarzelyje_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasirinktasDarzelis_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UzpildytasDarzelis_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioVietaEileje_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Darzelio_seniūnija_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymojiKalba_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymoMetodika_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesTipas_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioAmziausIntervalas_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzeliLankoBrolysSeserys_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinkamaGrupeDarzelyje_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasirinktasDarzelis_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UzpildytasDarzelis_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioVietaEileje_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Darzelio_seniūnija_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymojiKalba_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesUgdymoMetodika_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioGrupesTipas_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzelioAmziausIntervalas_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AtitinkaDarzelioPriskirtaTeritorija_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DarzeliLankoBrolysSeserys_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinkamaGrupeDarzelyje_5)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrasymoPateikimoData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaikoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaikoGimimoData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LankymoData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaikoSeniunija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prioritetas_DeklaruotasMiestas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prioritetas_3_ar_Daugiau_Vaiku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prioritetas_seimosdarbingumoLygis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prioritetas_auginaTikVienasTevas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasirinktasDarzelis_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UzpildytasDarzelis_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioVietaEileje_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Darzelio_seniūnija_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymojiKalba_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymoMetodika_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesTipas_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioAmziausIntervalas_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtitinkaDarzelioPriskirtaTeritorija_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzeliLankoBrolysSeserys_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinkamaGrupeDarzelyje_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasirinktasDarzelis_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UzpildytasDarzelis_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioVietaEileje_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Darzelio_seniūnija_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymojiKalba_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymoMetodika_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesTipas_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioAmziausIntervalas_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtitinkaDarzelioPriskirtaTeritorija_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzeliLankoBrolysSeserys_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinkamaGrupeDarzelyje_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasirinktasDarzelis_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UzpildytasDarzelis_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioVietaEileje_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Darzelio_seniūnija_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymojiKalba_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymoMetodika_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesTipas_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioAmziausIntervalas_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtitinkaDarzelioPriskirtaTeritorija_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzeliLankoBrolysSeserys_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinkamaGrupeDarzelyje_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasirinktasDarzelis_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UzpildytasDarzelis_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioVietaEileje_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Darzelio_seniūnija_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymojiKalba_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymoMetodika_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesTipas_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioAmziausIntervalas_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtitinkaDarzelioPriskirtaTeritorija_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzeliLankoBrolysSeserys_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinkamaGrupeDarzelyje_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasirinktasDarzelis_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UzpildytasDarzelis_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioVietaEileje_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Darzelio_seniūnija_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymojiKalba_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesUgdymoMetodika_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioGrupesTipas_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzelioAmziausIntervalas_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AtitinkaDarzelioPriskirtaTeritorija_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DarzeliLankoBrolysSeserys_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinkamaGrupeDarzelyje_5)
+        </td>
+        <td>
+            @Html.ActionLink("Koreguoti", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Informaciją", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Trinti", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

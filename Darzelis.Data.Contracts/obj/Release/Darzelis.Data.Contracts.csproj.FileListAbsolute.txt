@@ -1,0 +1,14 @@
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\Darzelis.Data.Contracts.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\Darzelis.Data.Contracts.pdb
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\Darzelis.Models.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\Microsoft.CSharp.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.Data.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.Net.Http.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.Xml.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\System.Xml.Linq.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\bin\Release\Darzelis.Models.pdb
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\obj\Release\Darzelis.Data.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\obj\Release\Darzelis.Data.Contracts.dll
+C:\Users\Marius\documents\visual studio 2015\Projects\WebsiteDarzelis\Darzelis.Data.Contracts\obj\Release\Darzelis.Data.Contracts.pdb

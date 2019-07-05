@@ -1,0 +1,16 @@
+﻿<div ng-controller="loginController">
+    <form class="form-horizontal" name="loginForm" role="form">
+        <fieldset>
+            <div id="loader" style="display: none;margin-bottom:10px;">
+                <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> kraunama...
+            </div>
+            <label style="text-align: left;width: 100px;">Vartotojas:</label> <input type="text" name="username" id="username" ><br>
+            <label style="text-align: left;width: 100px;">Slaptažodis:</label> <input type="password" name="password" id="password"><br>
+            <div style="margin-top:10px;">
+                <button type="button" class="btn btn-success" ng-click="submit()">Prisijungti</button>
+                </div>
+
+</fieldset>
+
+</form>
+</div>

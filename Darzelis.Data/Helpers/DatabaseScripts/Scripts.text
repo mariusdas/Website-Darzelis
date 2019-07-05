@@ -1,0 +1,84 @@
+﻿  update [DarzelisWEBNew].[dbo].[Request] set Accepted=0,PriimtasDarzelis=null where Accepted=1
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set PriemimoVaikuKiekis=1 where ID!=''
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set PriemimoVaikuKiekis=2 where ID=1
+  update [DarzelisWEBNew].[dbo].PreRequestSchool set DarzelioVietaEileje=null where Id!=''
+
+
+  // Insert into existing
+
+Insert Into [DarzelisWEBNew].[dbo].[Pre_Schools] SELECT [Label]
+      ,[PriemimoVaikuKiekis]
+      ,[Address]
+      ,[Phone]
+      ,[SchoolNo]
+      ,[WWW]
+      ,[Email]
+      ,[Fax]
+      ,[School_Type]
+      ,[BuildDate]
+      ,[Elderate]
+      ,[GisX]
+      ,[GisY] FROM [DarzelisWEB].[dbo].[Pre_Schools]
+
+	  Insert Into [DarzelisWEBNew].[dbo].[User] SELECT [Vardas]
+      ,[Pavarde]
+      ,[Email]
+      ,[Username]
+      ,[Password]
+      ,[ConfirmPassword]
+      ,[Metai]
+      ,[VaikoINDnr]
+      ,[City]
+      ,[Region]
+      ,[UserType]
+      ,[RequestCreated] FROM [DarzelisWEB].[dbo].[User]
+
+//password resets
+UPDATE [DarzelisWEBNew].[dbo].[User]
+SET [Password]='user',[ConfirmPassword]='user'
+WHERE Id!=1
+
+UPDATE [DarzelisWEBNew].[dbo].[User]
+SET [Password]='admin',[ConfirmPassword]='admin'
+WHERE Id=1
+
+//C# set passwords
+foreach (var usr in Uow.Users.GetAll().ToList())
+{
+    usr.Password = AlgorithmsAll.Sha256Algorithm.GetMD5Hash(usr.Password);
+    usr.ConfirmPassword = AlgorithmsAll.Sha256Algorithm.GetMD5Hash(usr.ConfirmPassword);
+    Uow.Users.Update(usr);
+
+}
+//local
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set Label='Karlsono darželis' where ID=3
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set Label='Vilniaus Žirmūnų' where ID=4
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set Label='Lopšelis' where ID=5
+
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisX='547300752'  where ID=1
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisY='252284992'  where ID=1
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisX='547098219'  where ID=2
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisY='25310582'  where ID=2
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisX='54729529'  where ID=3
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisY='253284253'  where ID=3
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisX='547246831'  where ID=4
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisY='252990474'  where ID=4
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisX='546952085'  where ID=5
+  update [DarzelisWEBNew].[dbo].[Pre_Schools] set GisY='252134981'  where ID=5
+
+  //produciton
+  
+  update [dbo].[Pre_Schools] set Label='Karlsono darželis' where ID=3
+  update [dbo].[Pre_Schools] set Label='Vilniaus Žirmūnų' where ID=4
+  update [dbo].[Pre_Schools] set Label='Lopšelis' where ID=5
+
+  update [dbo].[Pre_Schools] set GisX='547300752'  where ID=1
+  update [dbo].[Pre_Schools] set GisY='252284992'  where ID=1
+  update [dbo].[Pre_Schools] set GisX='547098219'  where ID=2
+  update [dbo].[Pre_Schools] set GisY='25310582'  where ID=2
+  update [dbo].[Pre_Schools] set GisX='54729529'  where ID=3
+  update [dbo].[Pre_Schools] set GisY='253284253'  where ID=3
+  update [dbo].[Pre_Schools] set GisX='547246831'  where ID=4
+  update [dbo].[Pre_Schools] set GisY='252990474'  where ID=4
+  update [dbo].[Pre_Schools] set GisX='546952085'  where ID=5
+  update [dbo].[Pre_Schools] set GisY='252134981'  where ID=5

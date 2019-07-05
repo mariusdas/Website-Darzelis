@@ -1,0 +1,62 @@
+﻿<div id="loader" style="display: none">
+    <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> Kraunamas vartotojas
+</div>
+<div id="loader1" style="display: none">
+    <i class="fa fa-cog fa-fw fa-spin fa-2x"> </i> Saugomas vartotojas
+</div>
+<form class="form-horizontal" name="editUserForm" novalidate role="form" data-ng-submit="editUser()">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><b>Koreguojamas vartotojas</b></div>
+        <div class="panel-body">
+            <fieldset>
+                <div class="form-group" style="display: none">
+                    <label for="UserID" class="col-sm-3 control-label">Vartotojo Id</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="UserID" name="UserID" class="form-control" value="{{user.Id}}" ng-model="user.Id" />
+
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error' : editUserForm.Vardas.$invalid}">
+                    <label for="Vardas" class="col-sm-3 control-label">Vardas</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Vardas" name="Vardas" class="form-control" ng-model="user.Vardas" value="{{user.Vardas}}" required />
+                        <span class="help-block" ng-show="editUserForm.Vardas.$error.required"><i class="fa fa-star"></i></span>
+                        
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : editUserForm.Pavarde.$invalid}">
+                    <label for="Pavarde" class="col-sm-3 control-label">Pavarde</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Pavarde" name="Pavarde" class="form-control" ng-model="user.Pavarde" value="{{user.Pavarde}}" required  />
+                        <span class="help-block" ng-show="editUserForm.Pavarde.$error.required"><i class="fa fa-star"></i></span>
+                        
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : editUserForm.Email.$invalid}">
+                    <label for="Email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Email" name="Email" class="form-control" ng-model="user.Email" value="{{user.Email}}" required />
+                        <span class="help-block" ng-show="editUserForm.Email.$error.required"><i class="fa fa-star"></i></span>
+                       
+                    </div>
+                </div>
+
+               
+
+                <div class="container">
+                    <button type="submit" id="updateUser" value="updateUser" ng-disabled="editUserForm.$invalid">
+                        <i class="fa fa-edit btn btn-primary"> Atnaujinti vartotją</i>
+                    </button>
+                    <button type="button" id="deleteUser" value="deleteUser" data-ng-click="deleteUser()">
+                        <i class="fa fa-minus btn btn-danger"> Trinti vartotoją</i>
+                    </button>
+                    <button type="button" id="cancelUser" value="cancelUser" ng-click="cancelUser()">
+                        <i class="fa fa-undo btn btn-link"> Atšaukti</i>
+                    </button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    
+</form>
